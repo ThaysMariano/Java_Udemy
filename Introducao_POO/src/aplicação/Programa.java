@@ -15,12 +15,11 @@ public class Programa {
     Fazer um programa para ler as medidas dos lados de dois triângulos X e Y (suponha medidas  válidas).
     Em seguida, mostrar o valor das áreas dos dois triângulos e dizer qual dos dois triângulos possui a maior área.
     */
-
-        System.out.println("Digite os lados do primeiro triângulo");
         triangulo A, B;
         A= new triangulo();
         B = new triangulo();
 
+        System.out.println("Digite os lados do primeiro triângulo");
         A.x = sc.nextDouble();
         A.y = sc.nextDouble();
         A.z = sc.nextDouble();
@@ -30,11 +29,8 @@ public class Programa {
         B.y = sc.nextDouble();
         B.z= sc.nextDouble();
 
-        double pA =(A.x+A.y+A.z)/2;
-        double pB =(B.x+B.y+B.z)/2;
-
-        double areaA = Math.sqrt((pA*(pA-A.x)*(pA-A.y)*(pA-A.z)));
-        double areaB = Math.sqrt((pB*(pB-B.x)*(pB-B.y)*(pB-B.z)));
+        double areaA = A.calcularArea();
+        double areaB = B.calcularArea();
 
         System.out.printf("Área primeiro triângulo: %.2f%n", areaA);
         System.out.printf("Área segundo triângulo: %.2f%n", areaB);
@@ -43,12 +39,12 @@ public class Programa {
         String nome;
         if(areaA>areaB){
             maiorArea = areaA;
-            nome = "Primeiro";
+            nome = "primeiro";
         }else{
             maiorArea= areaB;
-            nome = "Segundo";
+            nome = "segundo";
         }
-        System.out.printf("A maior área é: %.2f do %s triângulo.", maiorArea, nome );
+        System.out.printf("A maior área é: %.2f do %s triângulo.", maiorArea, nome);
 
         sc.close();
     }
